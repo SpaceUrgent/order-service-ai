@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE IF NOT EXISTS order_service.orders (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     order_time TIMESTAMP WITH TIME ZONE NOT NULL,
     customer VARCHAR(255) NOT NULL,
@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS orders (
     total_price NUMERIC(19, 4) NOT NULL
 );
 
-CREATE INDEX idx_orders_customer ON orders(customer);
-CREATE INDEX idx_orders_product ON orders(product);
+CREATE INDEX idx_orders_customer ON order_service.orders(customer);
+CREATE INDEX idx_orders_product ON order_service.orders(product);
