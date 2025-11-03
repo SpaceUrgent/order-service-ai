@@ -1,9 +1,12 @@
 package io.spaceurgent.order.service.ai.api;
 
 import io.spaceurgent.order.service.ai.application.dto.AddOrderRequestDto;
+import io.spaceurgent.order.service.ai.application.dto.MessageDto;
 import io.spaceurgent.order.service.ai.application.dto.OrderDto;
+import io.spaceurgent.order.service.ai.application.service.OrderAssistantService;
 import io.spaceurgent.order.service.ai.application.service.OrderService;
 import io.spaceurgent.order.service.ai.domain.repository.ListOrdersCriteria;
+import io.spaceurgent.order.service.ai.infrastracture.ai.service.AiOrderAssistantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
+    private final OrderAssistantService orderAssistantService;
 
     @PostMapping
     public OrderDto addOrder(@RequestBody @Valid AddOrderRequestDto requestDto) {
@@ -34,5 +38,10 @@ public class OrderController {
                 .customer(customer)
                 .build();
         return orderService.listOrders(criteria);
+    }
+
+    @PostMapping("/assistant")
+    public MessageDto askAssistant(@RequestBody @Valid MessageDto userMessage) {
+        return orderAssistantService.ask(userMessage);
     }
 }

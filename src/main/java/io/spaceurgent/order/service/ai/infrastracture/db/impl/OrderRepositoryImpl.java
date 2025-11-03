@@ -21,13 +21,13 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class OrderRepositoryImpl implements OrderRepository {
     private static final String INSERT_ORDER_SQL = """
-            INSERT INTO orders (order_time, customer, product, quantity, price_per_unit, total_price)
+            INSERT INTO order_service,orders (order_time, customer, product, quantity, price_per_unit, total_price)
             VALUES (?,?,?,?,?,?)
             RETURNING id
             """;
 
     private static final String SELECT_ORDERS_SQL = """
-            SELECT * FROM orders WHERE 1=1
+            SELECT * FROM order_service.orders WHERE 1=1
             """;
 
     private final JdbcTemplate jdbcTemplate;

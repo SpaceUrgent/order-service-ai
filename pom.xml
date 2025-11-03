@@ -15,7 +15,8 @@
 	<description>Demo project with AI agent</description>
 	<properties>
 		<java.version>21</java.version>
-	</properties>
+        <langchain4j-spring-boot-starter.version>1.0.0-beta1</langchain4j-spring-boot-starter.version>
+    </properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -28,6 +29,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-spring-boot-starter</artifactId>
+            <version>${langchain4j-spring-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
+            <version>${langchain4j-spring-boot-starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
