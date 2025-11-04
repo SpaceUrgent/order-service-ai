@@ -1,16 +1,13 @@
-package io.spaceurgent.order.service.ai.infrastracture.ai.agent;
+package io.spaceurgent.order.service.ai.infrastructure.ai.agent;
 
 import dev.langchain4j.service.Result;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.spring.AiService;
-import dev.langchain4j.service.spring.AiServiceWiringMode;
 
 @AiService(
         tools = "sqlTools",
-        chatMemory = "agentChatMemory",
-        wiringMode = AiServiceWiringMode.EXPLICIT,
-        chatModel = "openAiChatModel"
+        chatMemory = "agentChatMemory"
 )
 public interface SqlAgent {
 
@@ -19,7 +16,7 @@ public interface SqlAgent {
         analyze result and return data with brief summary.
         Return accurate answer based on SQL result without redundant explanation and data pretty formatted fetched from database.
         Answer should be as short as possible, should contain summary at the beginning and then data.
-        Do not add anything else.
+        Do not add anything else, do not add sql queries to result or execution process description.
         Current Postgres schema is 'order_service'.
         You can run multiple steps to solve a task, such as:
             - receive all tables from schema to understand structure

@@ -1,4 +1,4 @@
-package io.spaceurgent.order.service.ai.infrastracture.ai;
+package io.spaceurgent.order.service.ai.infrastructure.ai;
 
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
