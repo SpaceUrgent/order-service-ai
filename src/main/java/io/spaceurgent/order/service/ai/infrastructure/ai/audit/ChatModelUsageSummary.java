@@ -1,4 +1,4 @@
-package io.spaceurgent.order.service.ai.infrastracture.ai.audit;
+package io.spaceurgent.order.service.ai.infrastructure.ai.audit;
 
 import lombok.Builder;
 

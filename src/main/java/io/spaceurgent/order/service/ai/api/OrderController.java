@@ -6,7 +6,6 @@ import io.spaceurgent.order.service.ai.application.dto.OrderDto;
 import io.spaceurgent.order.service.ai.application.service.OrderAssistantService;
 import io.spaceurgent.order.service.ai.application.service.OrderService;
 import io.spaceurgent.order.service.ai.domain.repository.ListOrdersCriteria;
-import io.spaceurgent.order.service.ai.infrastracture.ai.service.AiOrderAssistantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package io.spaceurgent.order.service.ai.infrastracture.db.impl;
+package io.spaceurgent.order.service.ai.infrastructure.db.impl;
 
 import io.spaceurgent.order.service.ai.domain.model.Order;
 import io.spaceurgent.order.service.ai.domain.repository.ListOrdersCriteria;

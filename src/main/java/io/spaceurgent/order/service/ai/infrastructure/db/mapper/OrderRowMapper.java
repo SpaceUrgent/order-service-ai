@@ -1,4 +1,4 @@
-package io.spaceurgent.order.service.ai.infrastracture.db.mapper;
+package io.spaceurgent.order.service.ai.infrastructure.db.mapper;
 
 import io.spaceurgent.order.service.ai.domain.model.Order;
 import org.springframework.jdbc.core.RowMapper;
