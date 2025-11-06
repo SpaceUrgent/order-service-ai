@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>io.spaceurgent</groupId>
 	<artifactId>order-service-ai</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>order-service-ai</name>
 	<description>Demo project with AI agent</description>
 	<properties>
