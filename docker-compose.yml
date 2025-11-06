@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: ${DB}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - order-service-network
+
+  order-service-ai:
+    image: spaceurgent/order-service-ai:latest
+    container_name: order-service-ai
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${DB}
+      DB_USERNAME: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      OPEN_AI_API_KEY: ${OPEN_AI_API_KEY}
+      OPEN_AI_MODEL_NAME: ${OPEN_AI_MODEL_NAME}
+    ports:
+      - "8080:8080"
+    networks:
+      - order-service-network
+    depends_on:
+      - postgres
+
+networks:
+  order-service-network:
+    driver: bridge
