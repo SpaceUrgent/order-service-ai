@@ -1,3 +1,24 @@
 spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
   flyway:
+    url: ${DB_URL}
+    user: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     locations: classpath:migrations
+
+langchain4j:
+  open-ai:
+    chat-model:
+      api-key: ${OPEN_AI_API_KEY}
+      model-name: ${OPEN_AI_MODEL_NAME:gpt-4o-mini}
+
+logging:
+  level:
+    org.springframework: INFO
+    io.spaceurgent: DEBUG
+    dev.langchain4j: DEBUG
